@@ -1,0 +1,120 @@
+### Usaremos CSS para estilos y especificar que no quieres SSR desde el inicio.
+-> ng new estructura-frontend --style=css --ssr=false
+
+--
+
+mkdir scripts
+New-Item scripts/estructura.bat -ItemType "file"
+scripts\estructura.bat
+
+--
+:::
+mkdir src/app/admin
+New-Item -Path src/app/admin/admin.routes.ts -ItemType File
+
+@"
+import { Routes } from '@angular/router';
+
+export const AUTH_ROUTES: Routes = [];
+"@ | Set-Content -Path src/app/admin/admin.routes.ts
+
+			
+			mkdir src/app/admin/admin-layout
+			mkdir src/app/admin/admin-calendar
+			mkdir src/app/admin/admin-dashboard
+
+:::
+mkdir src/app/articles
+
+			mkdir src/app/articles/article-detail
+			mkdir src/app/articles/article-list
+
+:::
+mkdir src/app/auth
+
+			mkdir src/app/auth/admin-login
+			mkdir src/app/auth/admin-register
+
+:::
+mkdir src/app/core
+
+:::
+mkdir src/app/shared
+
+
+
+
+
+
+
+
+
+:::::::::::::::
+:::::::::::::::
+::::::
+:::::::::::::::
+:::::::::::::::
+
+
+
+
+--Directiva generada con Angular CLI:
+ng generate directive admin/mi-directiva
+
+--Elimina los archivos generados:
+rm src/app/admin/mi-directiva.directive.ts
+rm src/app/admin/mi-directiva.directive.spec.ts
+
+--Eliminar la carpeta admin/ (si está vacía o ya no se usa):
+rm -r src/app/admin/
+
+
+
+
+
+
+
+
+
+
+:::::::::::::::
+:::::::::::::::
+::::::
+:::::::::::::::
+:::::::::::::::
+
+@echo off
+REM === Crear carpetas si no existen ===
+if not exist src\app\admin (
+    mkdir src\app\admin
+)
+
+if not exist src\app\auth (
+    mkdir src\app\auth
+)
+
+if not exist src\app\articles (
+    mkdir src\app\articles
+)
+
+REM === Crear admin.routes.ts ===
+echo import { Routes } from '@angular/router';> src\app\admin\admin.routes.ts
+echo.>> src\app\admin\admin.routes.ts
+echo export const ADMIN_ROUTES: Routes = [];>> src\app\admin\admin.routes.ts
+
+REM === Crear auth.routes.ts ===
+echo import { Routes } from '@angular/router';> src\app\auth\auth.routes.ts
+echo.>> src\app\auth\auth.routes.ts
+echo export const AUTH_ROUTES: Routes = [];>> src\app\auth\auth.routes.ts
+
+REM === Crear articles.routes.ts ===
+echo import { Routes } from '@angular/router';> src\app\articles\articles.routes.ts
+echo.>> src\app\articles\articles.routes.ts
+echo export const ARTICLE_ROUTES: Routes = [];>> src\app\articles\articles.routes.ts
+
+echo.
+echo Archivos de rutas creados exitosamente:
+echo - src\app\admin\admin.routes.ts
+echo - src\app\auth\auth.routes.ts
+echo - src\app\articles\articles.routes.ts
+pause
