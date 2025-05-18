@@ -38,10 +38,36 @@ mkdir src/app/auth
 :::
 mkdir src/app/core
 
+			mkdir src/app/core/guards
+			mkdir src/app/core/interceptors
+			mkdir src/app/core/models
+			mkdir src/app/core/services
+
+			ng generate guard core/guards/logged --skip-tests
+			ng generate interceptor core/interceptors/auth --skip-tests
+			mkdir -p src/app/core/models
+			New-Item -Path "src/app/core/models/article.interface.ts" -ItemType File -Force
+			ng generate service core/services/articles --skip-tests
+
+
+
 :::
 mkdir src/app/shared
 
+			mkdir src/app/shared/components
+				mkdir src/app/shared/components/footer
+				ng generate component shared/components/footer --skip-tests
+				mkdir src/app/shared/components/nav-bar
+				ng generate component shared/components/nav-bar --skip-tests
+			mkdir src/app/shared/directives
+			mkdir src/app/shared/pipes
 
+
+:::::::::::::::
+:::::::::::::::
+::::::
+:::::::::::::::
+:::::::::::::::
 
 
 
@@ -55,6 +81,24 @@ mkdir src/app/shared
 :::::::::::::::
 :::::::::::::::
 
+
+
+
+
+:::::::::::::::
+:::::::::::::::
+::::::
+:::::::::::::::
+:::::::::::::::
+
+
+
+
+:::::::::::::::
+:::::::::::::::
+::::::
+:::::::::::::::
+:::::::::::::::
 
 
 
